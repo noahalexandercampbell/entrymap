@@ -81,6 +81,8 @@ ruff check entrymap tests
 pytest
 ```
 
+[entrymap](https://github.com/noahalexandercampbell/entrymap)
+
 ## Tags
 
 `python`, `cli`, `entry-points`, `pyproject`, `developer-tools`, `audit`
