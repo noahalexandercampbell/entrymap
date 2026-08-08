@@ -4,8 +4,7 @@ from pathlib import Path
 
 from entrymap.scanner import EntryPointScanner, parse_entry_points_table
 
-
-REPO_ROOT = Path("/root/WeeklyProjects/Week-19/entrymap")
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 def test_parse_entry_points_table_basic() -> None:
@@ -72,8 +71,12 @@ def test_summary_counts_are_nonzero() -> None:
 
 
 def test_json_output_includes_expected_keys(tmp_path: Path) -> None:
-    import os, subprocess, sys
+    import json
+    import os
+    import subprocess
+    import sys
+
     output = subprocess.check_output([sys.executable, "-m", "entrymap.cli", str(tmp_path), "--json"])
-    payload = __import__("json").loads(output)
+    payload = json.loads(output)
     assert "packages" in payload
     assert "counts" in payload

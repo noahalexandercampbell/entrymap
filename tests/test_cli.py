@@ -7,9 +7,8 @@ import pytest
 from entrymap.cli import build_parser, main
 from entrymap.scanner import EntryPointScanner
 
-
-REPO_ROOT = Path("/root/WeeklyProjects/Week-19/entrymap") / "tests"
-SAMPLE_PACKAGE = REPO_ROOT.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SAMPLE_PACKAGE = REPO_ROOT
 
 
 def test_parser_accepts_default_path() -> None:
