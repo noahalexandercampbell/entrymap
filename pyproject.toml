@@ -26,8 +26,11 @@ dev = ["pytest>=7.0"]
 [project.scripts]
 entrymap = "entrymap.cli:main"
 
-[project.entry-points.entrymap.cli]
+[project.entry-points."entrymap.cli"]
 entrymap = "entrymap.cli:main"
+
+[project.urls]
+Repository = "https://github.com/noahalexandercampbell/entrymap"
 
 [tool.setuptools.packages.find]
 where = ["."]
