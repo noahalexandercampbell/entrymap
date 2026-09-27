@@ -72,7 +72,6 @@ def test_summary_counts_are_nonzero() -> None:
 
 def test_json_output_includes_expected_keys(tmp_path: Path) -> None:
     import json
-    import os
     import subprocess
     import sys
 

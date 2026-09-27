@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
 
 from entrymap.cli import build_parser, main
 from entrymap.scanner import EntryPointScanner
