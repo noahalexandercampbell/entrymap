@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import re
-from pathlib import Path
 from collections.abc import Iterable, Iterator
+from pathlib import Path
 
 from entrymap.models import EntryPoint, PackageRecord
 
