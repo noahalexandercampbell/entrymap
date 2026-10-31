@@ -99,7 +99,12 @@ class EntryPointScanner:
 
             text = pyproject_path.read_text(encoding="utf-8", errors="ignore")
             groups = parse_entry_points_table(text)
-            yield PackageRecord(path=package_path, pyproject_present=True, entry_points_groups=groups, warnings=tuple(warnings))
+            yield PackageRecord(
+                path=package_path,
+                pyproject_present=True,
+                entry_points_groups=groups,
+                warnings=tuple(warnings),
+            )
 
     def formatted_text(self) -> str:
         if not self.packages:

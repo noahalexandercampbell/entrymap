@@ -11,11 +11,15 @@ from entrymap.scanner import EntryPointScanner
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="entrymap",
-        description="Scan Python source trees and map package entry points from pyproject.toml."
+        description="Scan Python source trees and map package entry points from pyproject.toml.",
     )
     parser.add_argument("path", nargs="?", default=".", help="Directory to scan for package trees.")
-    parser.add_argument("--json", action="store_true", help="Emit JSON instead of human-readable text.")
-    parser.add_argument("--summary", action="store_true", help="Append count summary after the report.")
+    parser.add_argument(
+        "--json", action="store_true", help="Emit JSON instead of human-readable text."
+    )
+    parser.add_argument(
+        "--summary", action="store_true", help="Append count summary after the report."
+    )
     return parser
 
 

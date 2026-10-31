@@ -75,7 +75,9 @@ def test_json_output_includes_expected_keys(tmp_path: Path) -> None:
     import subprocess
     import sys
 
-    output = subprocess.check_output([sys.executable, "-m", "entrymap.cli", str(tmp_path), "--json"])
+    output = subprocess.check_output(
+        [sys.executable, "-m", "entrymap.cli", str(tmp_path), "--json"]
+    )
     payload = json.loads(output)
     assert "packages" in payload
     assert "counts" in payload
